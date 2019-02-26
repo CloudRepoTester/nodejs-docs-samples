@@ -3,13 +3,3 @@ steps:
   args: ['install']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'eu.gcr.io/$PROJECT_ID/data-pipeline/hotel-only:$SHORT_SHA', '-f', 'docker/Dockerfile', '.']
-
-images:
-  - ['eu.gcr.io/$PROJECT_ID/data-pipeline/hotel-only:$SHORT_SHA']
-
-timeout: 3600s
-
-options:
-  machineType: 'N1_HIGHCPU_8'
-
-logsBucket: 'gs://lh-cloud-build-logs'
